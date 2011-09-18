@@ -10,9 +10,9 @@ A Codeigniter package for interfacing with different cloud storage solutions suc
 
 ## Cloud Storage Providers
 
-- Rackspace Cloudfiles [http://www.rackspace.com/cloud/cloud_hosting_products/files/](http://www.rackspace.com/cloud/cloud_hosting_products/files/)
+- Rackspace Cloudfiles ::: [http://www.rackspace.com/cloud/cloud_hosting_products/files/](http://www.rackspace.com/cloud/cloud_hosting_products/files/)
 
-- Amazon.com S3 [http://aws.amazon.com/s3/](http://aws.amazon.com/s3/)
+- Amazon.com S3 ::: [http://aws.amazon.com/s3/](http://aws.amazon.com/s3/)
 
 
 ## Usage
@@ -38,7 +38,7 @@ $this->storage->load_driver('rackspace-cf'); // rackspace-cf or amazon-s3
 
 ### create_container()
 
-Create a new container with provider. Second argument is either "private or public". This would trigger if the container can be accessed publicly without authentication or not. Note: Amazon s3 calls containers buckets, just to clear up any confusion.  
+Create a new container with the provider. Second argument is either "private or public". This would trigger if the container can be accessed publicly without authentication or not. Note: Amazon s3 calls containers buckets, just to clear up any confusion.  
 
 ```
 $this->storage->create_container($container, 'private');
@@ -65,7 +65,7 @@ $this->storage->upload_file('container-name', '/tmp/test01.jpg', 'test01.jpg');
 
 This function is primarily for Amazon s3 because Rackspace does not support this feature. You can pass in a container name, file name, and expiration time in seconds. This function then will return a public URL to the file. The url will no longer be available after the expiration time. 
 
-Since Rackspace does not support this feature, this function will still work but it calls a custom library method you set in the configuration. The idea behind this is you can create your own controller that downloads the file from Rackspace Cloud Files and delivers delivers the file to the user. You more or less build your own custom authentication layer. For an example of this custom wrapper class check out libraries/rackspace_cf_url.php  
+Since Rackspace does not support this feature, this function will still work but it calls a custom library method you set in the configuration. The idea behind this is you can create your own controller that downloads the file from Rackspace Cloud Files and delivers the file to the user. You more or less build your own custom authentication layer. For an example of this custom wrapper class check out libraries/rackspace_cf_url.php. In this example you would set this config to the following. $config['storage']['cf_auth_url'] = array('library' => 'Rackspace_Cf_Url', 'method' => 'get_url'); It uses the Codeigniter library loader to load this library.
 
 ```
 $this->storage->get_authenticated_url('container-name', 'test01.jpg', 60);
