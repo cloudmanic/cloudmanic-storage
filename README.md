@@ -34,7 +34,7 @@ Don't forget to setup your config/storage.php. You have to enter your different 
 After setting up your keys you need to select a storage driver (or providers)
 
 ```
-$this->load->spark('cloudmanic-storage/1.0.0');
+$this->load->spark('cloudmanic-storage/1.x.x');
 $this->storage->load_driver('rackspace-cf'); // rackspace-cf or amazon-s3
 ```
 
