@@ -15,6 +15,10 @@ A Codeigniter package for interfacing with different cloud storage solutions suc
 - Amazon.com S3 ::: [http://aws.amazon.com/s3/](http://aws.amazon.com/s3/)
 
 
+## Sparks
+
+This package was built to be used with [http://getsparks.org/](http://getsparks.org/). It should work as a stand alone Codeigniter 3rd party package as well.
+
 ## Usage
 
 Best way to get started is to checkout the example controller in controllers/example.php. You can see complete examples from Amazon & Rackspace.

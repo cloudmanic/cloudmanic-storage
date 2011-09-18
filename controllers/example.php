@@ -14,7 +14,7 @@ class Example extends CI_Controller
 	//
 	function Rackspace()
 	{
-		$this->load->spark('cloudmanic-storage/1.0.0');
+		$this->load->spark('cloudmanic-storage/1.0.1');
 		$this->storage->load_driver('rackspace-cf');
 		$this->_test();		
 	}
