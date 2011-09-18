@@ -1,6 +1,6 @@
 # Cloudmanic Storage
 
-A Codeigniter package for interfacing with different cloud storage solutions such as Rackspace CloudFiles and Amazon S3. Easily switch between providers without having to change your code.
+A Codeigniter package for interfacing with different cloud storage solutions such as Rackspace CloudFiles and Amazon S3. Easily switch between providers without having to change your code. This package provides- uniform input and response.
 
 ## Requirements
 
