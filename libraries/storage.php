@@ -82,9 +82,9 @@ class Storage
 	//
 	// Upload file.
 	//
-	function upload_file($cont, $path, $name)
+	function upload_file($cont, $path, $name, $type = NULL, $acl = 'private')
 	{
-		return $this->_CI->{$this->_driver}->upload_file($cont, $path, $name);
+		return $this->_CI->{$this->_driver}->upload_file($cont, $path, $name, $type, $acl);
 	}
 	
 	//
