@@ -81,9 +81,23 @@ class Amazon_S3_Driver extends Storage
 	//
 	// Upload a file to a bucket.
 	//
-	function upload_file($cont, $path, $name)
+	function upload_file($cont, $path, $name, $type = NULL, $acl = 'private')
 	{
-		$this->_CI->s3->putObject(array('file' => $path), $cont, $name);
+		$input = array('file' => $path);
+		
+		// Set type.
+		if(! is_null($type))
+		{
+			$input['type'] = $type;
+		}
+		
+		// Remap ACL name;
+		if($acl == 'public')
+		{
+			$acl = 'public-read';
+		}
+	
+		$this->_CI->s3->putObject($input, $cont, $name, $acl);
 	}
 	
 	//
