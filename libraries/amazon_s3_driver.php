@@ -81,7 +81,7 @@ class Amazon_S3_Driver extends Storage
 	//
 	// Upload a file to a bucket.
 	//
-	function upload_file($cont, $path, $name)
+	function upload_file($cont, $path, $name, $type = NULL)
 	{
 		$this->_CI->s3->putObject(array('file' => $path), $cont, $name);
 	}

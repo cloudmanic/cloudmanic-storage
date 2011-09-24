@@ -69,12 +69,19 @@ class Rackspace_Cf_Driver extends Storage
 	//
 	// Upload file to a container.
 	//
-	function upload_file($cont, $path, $name)
+	function upload_file($cont, $path, $name, $type = NULL)
 	{
 		$my_container = $this->_conn->get_container($cont);
 
-		// move local file to server
+		// move local file to server		
 		$my_object = $my_container->create_object($name);
+		
+		// If we pass in a type we don't try to guess the type.
+		if(! is_null($type))
+		{
+			$my_object->content_type = $type;
+		}
+		
 		$my_object->load_from_filename($path);
 	}
 	
