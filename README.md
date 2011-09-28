@@ -102,5 +102,6 @@ $this->storage->delete_container('container-name');
 
 ## Author(s) 
 
-Company: Cloudmanic Labs, [http://cloudmanic.com](http://cloudmanic.com)
-By: Spicer Matthews [http://spicermatthews.com](http://spicermatthews.com)
+* Company: Cloudmanic Labs, [http://cloudmanic.com](http://cloudmanic.com)
+
+* By: Spicer Matthews [http://spicermatthews.com](http://spicermatthews.com)
