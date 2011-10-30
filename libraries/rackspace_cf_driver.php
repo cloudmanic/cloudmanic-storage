@@ -83,6 +83,8 @@ class Rackspace_Cf_Driver extends Storage
 		}
 		
 		$my_object->load_from_filename($path);
+
+		return ($my_object->container->cdn_enabled) ? $my_object->container->cdn_uri . '/' . $my_object->name : $my_object->name;
 	}
 	
 	//
