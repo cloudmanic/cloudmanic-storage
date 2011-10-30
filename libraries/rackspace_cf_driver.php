@@ -67,9 +67,9 @@ class Rackspace_Cf_Driver extends Storage
 	}
 
 	//
-	// Upload file to a container. At this point $acl does not do anything.
+	// Upload file to a container. At this point $acl and $metadata does not do anything.
 	//
-	function upload_file($cont, $path, $name, $type = NULL, $acl = 'private')
+	function upload_file($cont, $path, $name, $type = NULL, $acl = 'private', $metadata = array())
 	{
 		$my_container = $this->_conn->get_container($cont);
 
