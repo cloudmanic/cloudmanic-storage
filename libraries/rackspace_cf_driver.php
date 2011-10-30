@@ -67,9 +67,9 @@ class Rackspace_Cf_Driver extends Storage
 	}
 
 	//
-	// Upload file to a container. At this point $acl does not do anything.
+	// Upload file to a container. At this point $acl and $metadata does not do anything.
 	//
-	function upload_file($cont, $path, $name, $type = NULL, $acl = 'private')
+	function upload_file($cont, $path, $name, $type = NULL, $acl = 'private', $metadata = array())
 	{
 		$my_container = $this->_conn->get_container($cont);
 
@@ -83,6 +83,8 @@ class Rackspace_Cf_Driver extends Storage
 		}
 		
 		$my_object->load_from_filename($path);
+
+		return ($my_object->container->cdn_enabled) ? $my_object->container->cdn_uri . '/' . $my_object->name : $my_object->name;
 	}
 	
 	//
